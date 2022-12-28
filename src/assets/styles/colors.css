@@ -1,0 +1,22 @@
+/* COLORS */
+
+:root {
+    --light-purple: #7d82cd;
+    --purple: #454cb7;
+    --dark-purple: #373d92;
+
+    --green: #6ee7b7;
+    
+    --yellow-100: #fef9c3;
+    --yellow-200: #fef08a;
+    --yellow-300: #fde047;
+    --yellow-400: #facc15;
+    --yellow-500: #eab308;
+    --yellow-600: #ca8a04;
+    
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+}
