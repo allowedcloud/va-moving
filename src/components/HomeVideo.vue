@@ -11,8 +11,18 @@
 
 <template>
   <div class="video-wrapper">
-    <video autoplay muted loop nocontrols playsinline>
-      <source src="@/assets/videos/home-video-compressed-three.mp4" type="video/mp4" />
+    <video
+      autoplay
+      muted
+      loop
+      nocontrols
+      playsinline
+      poster="/images/home-video-poster.png"
+    >
+      <source
+        src="@/assets/videos/home-video-compressed-three.mp4"
+        type="video/mp4"
+      />
     </video>
   </div>
 </template>
