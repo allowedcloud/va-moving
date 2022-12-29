@@ -36,6 +36,10 @@ nav {
       text-underline-offset: 4px;
       padding: var(--space-3xs);
       color: var(--purple);
+
+      @media (max-width: 376px) {
+        font-size: var(--step--2);
+      }
     }
   }
 }
