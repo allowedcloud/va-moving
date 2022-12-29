@@ -32,6 +32,7 @@
       approach. One focused on educating and teaching consumers about quality
       moving services. Not to mention, showing them too!
     </p>
+    <TheGetQuoteButton />
   </section>
 </template>
 
