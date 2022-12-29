@@ -9,6 +9,9 @@ const destZip = route.query.dest;
 // break down the validation steps into multiple schemas
 const validationSchema = [
   yup.object({
+    currentAddress: yup.string().required().label("Current address"),
+    currentTown: yup.string().required().label("Town"),
+    currentState: yup.string().required().label("State"),
     currentZip: yup.string().length(5).required().label("Current zip"),
     destZip: yup.string().length(5).required().label("Destination zip"),
   }),
@@ -57,10 +60,10 @@ const formStatus = ref("incomplete");
  * Only Called when the last step is submitted
  */
 function onSubmit(formData) {
+  formStatus.value = "loading";
   useTimeoutFn(() => {
-    formStatus.value = "loading";
+    formStatus.value = "complete";
   }, 3000);
-  console.log("Success!");
   // console.log(JSON.stringify(formData, null, 2));
   // axios
   //   .post(
@@ -492,7 +495,7 @@ function onSubmit(formData) {
 .form-wrapper {
   display: flex;
   padding: 0 var(--space-l);
-  padding-top: var(--space-m);
+  padding-top: var(--space-2xl);
   align-items: center;
   min-height: 90vh;
 
