@@ -70,7 +70,7 @@ const onSubmit = handleSubmit((values) => {
       <Field name="phoneNumber" type="text" autocomplete="tel" />
       <span>{{ errors.phoneNumber }}</span>
 
-      <label>Message</label>
+      <label>Message*</label>
       <Field name="message" as="textarea" rows="4" />
       <span>{{ errors.message }}</span>
 
@@ -88,7 +88,7 @@ form {
 
   span {
     color: red;
-    font-size: var(--step--1);
+    font-size: var(--step--2);
   }
 }
 
@@ -111,6 +111,16 @@ button {
   margin: var(--space-s) 0;
   padding: var(--space-2xs) var(--space-m);
   border-radius: 999px;
+}
+
+.success-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    height: 50px;
+  }
 }
 
 /* Loader */

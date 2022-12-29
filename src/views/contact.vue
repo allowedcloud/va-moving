@@ -24,8 +24,8 @@ section {
   @media (min-width: 1024px) {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    border: 1px solid red;
-    min-height: 800px;
+    min-height: 950px;
+    padding-left: var(--space-2xl);
   }
 }
 .header {
