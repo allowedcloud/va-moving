@@ -20,11 +20,11 @@
       <li>
         <RouterLink to="/Residential"> Residential </RouterLink>
       </li>
-      <li>
+      <!-- <li>
         <RouterLink to="/packing"> Packing </RouterLink>
-      </li>
+      </li> -->
       <li>
-        <RouterLink to="/junk"> Junk </RouterLink>
+        <RouterLink to="/junk"> Junk Removal </RouterLink>
       </li>
       <li>
         <RouterLink to="/commercial"> Commercial </RouterLink>
