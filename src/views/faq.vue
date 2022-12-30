@@ -5,49 +5,51 @@ const faq = ref([
   {
     id: "wrapping",
     question: "Why is my furniture being wrapped in plastic?",
-    answer: `We needed a way to animate DOM elements without adding to the
-    virtual DOM in Vue and React. And it turned out our solution was gonna work
-    great for lots of other use cases as well.`,
+    answer:
+      "Wrapping furniture in plastic ensures that it is protected during the move",
   },
   {
     id: "floorrunner",
     question: "What's the purpose of the floor runner and door jam?",
-    answer: `It sure is! AutoAnimate is MIT licensed, which basically means you
-    are free to take it and do whatever you want with it. If you find it useful
-    consider <a href="https://github.com/sponsors/formkit">supporting our open source efforts</a>.`,
+    answer:
+      "These two items protect the house during the loading and unloading phase",
   },
   {
     id: "packingboxes",
-    question: "Why are you packing my boxes?",
-    answer: `AutoAnimate is a team effort 💪 . Most of the code was written by
-      <a href='https://twitter.com/jpschroeder'>Justin Schroeder</a>,
-      <a href='https://twitter.com/0xBOYD'>Andrew Boyd</a> played a key
-      role on the docs, and the rest of the <a href='https://formkit.com'>FormKit</a>
-      team held down the fort.`,
+    question: "How do you pack my boxes?",
+    answer:
+      "Items are wrapped in paper before being carefully arranged in the box",
   },
   {
     id: "preparation",
     question: "What can I do to prepare for my move?",
+    answer:
+      "Organize! Try your best to organize items in rooms and prepare them to be loaded or packed",
   },
   {
     id: "unable",
     question: "What items can't the movers move?",
+    answer: "Very large items like an above ground pool or treehouse",
   },
   {
     id: "tip",
     question: "Is it appropriate to tip?",
+    answer: "Yes! Our movers appreciate your generousity.",
   },
   {
     id: "advanced",
     question: "How far in advance should I book my move?",
+    answer: "Between one and two months",
   },
   {
     id: "leftover",
     question: "What do I do with leftover packing material?",
+    answer: "We will take them or you can recylce them",
   },
   {
     id: "appliances",
     question: "Will we take appliances?",
+    answer: "Yes! We will move appliances or dispose of them if you want",
   },
 ]);
 const current = ref(faq.value[0].id);
