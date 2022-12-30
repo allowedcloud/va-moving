@@ -4,7 +4,7 @@
       <RouterLink to="/story"> Our Story </RouterLink>
       <RouterLink to="/residential"> Residential </RouterLink>
       <RouterLink to="/commercial"> Commerical </RouterLink>
-      <RouterLink to="/blog" class="hos"> Blog </RouterLink>
+      <!-- <RouterLink to="/blog" class="hos"> Blog </RouterLink> -->
       <RouterLink to="/faq" class="hos"> FAQ </RouterLink>
       <RouterLink to="/quote" class="hos"> FREE QUOTE </RouterLink>
     </div>
