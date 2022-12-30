@@ -10,7 +10,7 @@ const destZip = route.query.dest;
 const validationSchema = [
   yup.object({
     currentAddress: yup.string().required().label("Current address"),
-    currentTown: yup.string().required().label("Town"),
+    currentCity: yup.string().required().label("Town"),
     currentState: yup.string().required().label("State"),
     currentZip: yup.string().length(5).required().label("Current zip"),
     destZip: yup.string().length(5).required().label("Destination zip"),
@@ -135,10 +135,10 @@ function onSubmit(formData) {
           name="currentAddress"
         />
 
-        <label>Town*</label>
+        <label>City*</label>
         <Field
-          name="currentTown"
-          :value="currentTown"
+          name="currentCity"
+          :value="currentCity"
           type="text"
           autocomplete="address-level2"
         />
