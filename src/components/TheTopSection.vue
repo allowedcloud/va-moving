@@ -76,7 +76,7 @@ defineProps<{
     background-color: white;
     font-weight: 600;
     font-size: var(--step-0);
-    font-family: "Roboto";
+    font-family: var(--font-header);
     padding: var(--space-xs);
     padding-bottom: 0;
     width: 300px;
