@@ -6,11 +6,11 @@
         <RouterLink to="/story"> About Us </RouterLink>
       </li>
       <li>
-        <RouterLink to="/contact"> Contact Us </RouterLink>
+        <RouterLink to="/contact"> Contact </RouterLink>
       </li>
-      <li>
+      <!-- <li>
         <RouterLink to="/blog"> Blog </RouterLink>
-      </li>
+      </li> -->
       <li>
         <RouterLink to="/story"> FAQ </RouterLink>
       </li>
