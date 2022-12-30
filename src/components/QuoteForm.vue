@@ -158,7 +158,7 @@ function onSubmit(formData) {
               mass: 0.5,
             },
           }"
-          name="currentTown"
+          name="currentCity"
         />
 
         <label>State*</label>
