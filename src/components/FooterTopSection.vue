@@ -2,7 +2,7 @@
   <section>
     <div class="top-text">
       <div class="logo-wrapper">
-        <img src="@/assets/vam-logo.png" />
+        <img src="@/assets/vam-logo.png" alt="VA Moving logo" />
         <span> Moving </span>
       </div>
       <a
