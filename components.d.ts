@@ -7,6 +7,8 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    CommercialIntro: typeof import('./src/components/CommercialIntro.vue')['default']
+    CommercialPhotoCarousel: typeof import('./src/components/CommercialPhotoCarousel.vue')['default']
     ContactForm: typeof import('./src/components/ContactForm.vue')['default']
     FooterLinks: typeof import('./src/components/FooterLinks.vue')['default']
     FooterMap: typeof import('./src/components/FooterMap.vue')['default']

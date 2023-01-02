@@ -40,6 +40,7 @@ const app = createApp(App);
 app.use(PhosphorVue);
 app.use(MotionPlugin);
 app.use(autoAnimatePlugin);
+
 app.use(createPinia());
 app.use(router);
 
