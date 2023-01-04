@@ -6,19 +6,18 @@ const faq = ref([
     id: "wrapping",
     question: "Why is my furniture being wrapped in plastic?",
     answer:
-      "Wrapping furniture in plastic ensures that it is protected during the move",
+      "Plastic wrap can help protect furniture from scratches, dents, and other types of damage during the move. It can also help prevent dirt and dust from accumulating on the furniture.",
   },
   {
     id: "floorrunner",
     question: "What's the purpose of the floor runner and door jam?",
     answer:
-      "These two items protect the house during the loading and unloading phase",
+      "During a move, floor runners and door jam protectors can be used to help protect the floors and doorways of both the old and new locations.",
   },
   {
     id: "packingboxes",
     question: "How do you pack my boxes?",
-    answer:
-      "Items are wrapped in paper before being carefully arranged in the box",
+    answer: "",
   },
   {
     id: "preparation",
