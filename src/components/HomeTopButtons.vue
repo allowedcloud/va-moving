@@ -4,7 +4,7 @@
       <ph-envelope :size="24" />
       CONTACT US
     </RouterLink>
-    <RouterLink to="/quote"> FREE QUOTE </RouterLink>
+    <RouterLink to="/quote"> GET QUOTE </RouterLink>
   </div>
 </template>
 

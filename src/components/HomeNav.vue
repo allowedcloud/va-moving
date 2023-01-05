@@ -6,7 +6,7 @@
       <RouterLink to="/commercial"> Commerical </RouterLink>
       <!-- <RouterLink to="/blog" class="hos"> Blog </RouterLink> -->
       <RouterLink to="/faq" class="hos"> FAQ </RouterLink>
-      <RouterLink to="/quote" class="hos"> FREE QUOTE </RouterLink>
+      <RouterLink to="/quote" class="hos"> GET QUOTE </RouterLink>
     </div>
   </nav>
 </template>

@@ -7,7 +7,7 @@ const props = defineProps<{
 <template>
   <Transition name="slide-fade">
     <div v-if="!props.showButton" class="home-bottom-quote-button">
-      <RouterLink to="/quote"> Free Quote </RouterLink>
+      <RouterLink to="/quote"> Get Quote </RouterLink>
     </div>
   </Transition>
 </template>
@@ -22,27 +22,31 @@ const props = defineProps<{
   text-align: center;
   padding: var(--space-s);
   backdrop-filter: blur(5px);
+  background-color: hsla(24, 100%, 100%, 0.72);
 
   a {
     padding: var(--space-2xs) var(--space-l);
     color: white;
     border-radius: 999px;
-    background-image: linear-gradient(125deg,
-        hsl(236deg 45% 49%) 0%,
-        hsl(236deg 44% 51%) 16%,
-        hsl(237deg 44% 52%) 24%,
-        hsl(237deg 44% 53%) 30%,
-        hsl(237deg 44% 54%) 35%,
-        hsl(237deg 44% 55%) 40%,
-        hsl(237deg 44% 56%) 45%,
-        hsl(237deg 44% 57%) 50%,
-        hsl(237deg 45% 58%) 55%,
-        hsl(237deg 45% 59%) 60%,
-        hsl(237deg 45% 61%) 65%,
-        hsl(237deg 45% 62%) 70%,
-        hsl(236deg 45% 63%) 76%,
-        hsl(236deg 44% 64%) 84%,
-        hsl(236deg 44% 65%) 100%);
+    font-weight: 600;
+    background-image: linear-gradient(
+      125deg,
+      hsl(236deg 45% 49%) 0%,
+      hsl(236deg 44% 51%) 16%,
+      hsl(237deg 44% 52%) 24%,
+      hsl(237deg 44% 53%) 30%,
+      hsl(237deg 44% 54%) 35%,
+      hsl(237deg 44% 55%) 40%,
+      hsl(237deg 44% 56%) 45%,
+      hsl(237deg 44% 57%) 50%,
+      hsl(237deg 45% 58%) 55%,
+      hsl(237deg 45% 59%) 60%,
+      hsl(237deg 45% 61%) 65%,
+      hsl(237deg 45% 62%) 70%,
+      hsl(236deg 45% 63%) 76%,
+      hsl(236deg 44% 64%) 84%,
+      hsl(236deg 44% 65%) 100%
+    );
   }
 }
 

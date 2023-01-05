@@ -22,7 +22,7 @@ const onSubmit = handleSubmit((values) => {
 </script>
 <template>
   <section>
-    <h1>Get Your Free Quote</h1>
+    <h1>Get Your Quote</h1>
     <p>
       Provide your current ZIP code and <br />the one of where you're moving
     </p>
