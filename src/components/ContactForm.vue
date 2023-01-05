@@ -103,6 +103,7 @@ textarea {
   border-radius: 6px;
   width: 300px;
   padding: var(--space-3xs);
+  margin: var(--space-2xs) 0;
 }
 
 button {
