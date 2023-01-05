@@ -111,12 +111,7 @@ function onSubmit(formData) {
         }"
       >
         <label>Current address*</label>
-        <Field
-          name="currentAddress"
-          :value="currentAddress"
-          type="text"
-          autocomplete="street-name"
-        />
+        <Field name="currentAddress" type="text" autocomplete="street-name" />
         <ErrorMessage
           v-motion
           :initial="{
@@ -137,12 +132,7 @@ function onSubmit(formData) {
         />
 
         <label>City*</label>
-        <Field
-          name="currentCity"
-          :value="currentCity"
-          type="text"
-          autocomplete="address-level2"
-        />
+        <Field name="currentCity" type="text" autocomplete="address-level2" />
         <ErrorMessage
           v-motion
           :initial="{
@@ -163,12 +153,7 @@ function onSubmit(formData) {
         />
 
         <label>State*</label>
-        <Field
-          name="currentState"
-          :value="currentState"
-          type="text"
-          autocomplete="address-level1"
-        />
+        <Field name="currentState" type="text" autocomplete="address-level1" />
         <ErrorMessage
           v-motion
           :initial="{
