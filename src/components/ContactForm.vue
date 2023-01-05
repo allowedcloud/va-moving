@@ -24,12 +24,11 @@ const formState = ref("incomplete");
 
 // Submit function
 const onSubmit = handleSubmit((values) => {
-  // alert(JSON.stringify(values, null, 2));
   window.scrollTo(0, 0);
   formState.value = "loading";
   axios
     .post(
-      "https://usebasin.com/f/7de4c035611c",
+      "https://usebasin.com/f/8bf7b28faff1",
       {
         message: JSON.stringify(values, null, 2),
       },
@@ -38,6 +37,8 @@ const onSubmit = handleSubmit((values) => {
     .then((response) => {
       if (response.status === 200) {
         formState.value = "success";
+      } else {
+        formState.value = "incomplete";
       }
     })
     .catch((error) => console.log(error));

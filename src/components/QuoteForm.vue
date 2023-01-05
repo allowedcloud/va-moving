@@ -10,7 +10,7 @@ const destZip = route.query.dest;
 const validationSchema = [
   yup.object({
     currentAddress: yup.string().required().label("Current address"),
-    currentCity: yup.string().required().label("Town"),
+    currentCity: yup.string().required().label("City"),
     currentState: yup.string().required().label("State"),
     currentZip: yup.string().length(5).required().label("Current zip"),
     destZip: yup.string().length(5).required().label("Destination zip"),
@@ -62,24 +62,25 @@ const formStatus = ref("incomplete");
 function onSubmit(formData) {
   formStatus.value = "loading";
   useTimeoutFn(() => {
-    formStatus.value = "complete";
-  }, 3000);
-  // console.log(JSON.stringify(formData, null, 2));
-  // axios
-  //   .post(
-  //     "https://getform.io/f/87248c80-987c-4791-9770-2e358c9533d9",
-  //     {
-  //       message: JSON.stringify(formData, null, 2),
-  //     },
-  //     { headers: { Accept: "application/json" } }
-  //   )
-  //   .then((response) => {
-  //     if (response.status === 200) {
-  //       formStatus.value = "complete";
-  //       console.log("Success!");
-  //     }
-  //   })
-  //   .catch((error) => console.log(error));
+    axios
+      .post(
+        "https://usebasin.com/f/7de4c035611c",
+        JSON.stringify(formData, null, 2),
+        {
+          headers: {
+            Accept: "application/json",
+          },
+        }
+      )
+      .then((response) => {
+        if (response.status === 200) {
+          formStatus.value = "complete";
+        } else {
+          formStatus.value = "incomplete";
+        }
+      })
+      .catch((error) => console.log(error));
+  }, 2000);
 }
 </script>
 
