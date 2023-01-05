@@ -5,6 +5,7 @@
         <img src="@/assets/vam-logo.png" alt="VA Moving logo" />
         <span> Moving </span>
       </div>
+      <a href="tel:7577714090" class="address"> (757) 771-4090 </a>
       <a
         href="https://goo.gl/maps/A3htu53cvPzsM5TA8"
         target="__blank"
@@ -36,9 +37,10 @@ section {
   display: flex;
   align-items: center;
   gap: var(--space-2xs);
+  padding: var(--space-s) 0;
 
   img {
-    height: 45px;
+    height: 55px;
   }
 
   span {
