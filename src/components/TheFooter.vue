@@ -12,7 +12,7 @@ watch(footerIsVisible, () => {
     <FooterTopSection />
     <FooterLinks />
     <div class="bottom-bar">
-      2022 <strong>VA MOVING</strong> All Rights Reserved.
+      2023 <strong>VA MOVING</strong> All Rights Reserved.
     </div>
   </footer>
 </template>
