@@ -12,7 +12,7 @@
         <RouterLink to="/blog"> Blog </RouterLink>
       </li> -->
       <li>
-        <RouterLink to="/story"> FAQ </RouterLink>
+        <RouterLink to="/faq"> FAQ </RouterLink>
       </li>
     </ul>
     <ul>
