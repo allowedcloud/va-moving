@@ -17,18 +17,25 @@ const faq = ref([
   {
     id: "packingboxes",
     question: "How do you pack my boxes?",
-    answer: "",
+    answer:
+      "Various packing materials are used to ensure delicate items are protected. Boxes get labeled by room.",
   },
   {
     id: "preparation",
     question: "What can I do to prepare for my move?",
     answer:
-      "Organize! Try your best to organize items in rooms and prepare them to be loaded or packed",
+      "Organize! Try your best to organize items in rooms and prepare them to be loaded or packed.",
+  },
+  {
+    id: "appliances",
+    question: "Will we take appliances?",
+    answer: "Yes! We will move appliances or even dispose of them if you want",
   },
   {
     id: "unable",
     question: "What items can't the movers move?",
-    answer: "Very large items like an above ground pool or treehouse",
+    answer:
+      "Very large items like an above ground pool or backyard shed. But things like pianos, pool tables, or ride on lawnmowers, we can handle!",
   },
   {
     id: "tip",
@@ -43,12 +50,7 @@ const faq = ref([
   {
     id: "leftover",
     question: "What do I do with leftover packing material?",
-    answer: "We will take them or you can recylce them",
-  },
-  {
-    id: "appliances",
-    question: "Will we take appliances?",
-    answer: "Yes! We will move appliances or dispose of them if you want",
+    answer: "We will take them or you can recycle them",
   },
 ]);
 const current = ref(faq.value[0].id);
