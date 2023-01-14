@@ -119,6 +119,7 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: var(--space-3xl) 0;
 
   img {
     height: 50px;
