@@ -64,7 +64,7 @@ function onSubmit(formData) {
   useTimeoutFn(() => {
     axios
       .post(
-        "https://usebasin.com/f/7de4c035611c",
+        "https://getform.io/f/87248c80-987c-4791-9770-2e358c9533d9",
         JSON.stringify(formData, null, 2),
         {
           headers: {
