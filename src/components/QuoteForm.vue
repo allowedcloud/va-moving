@@ -6,14 +6,18 @@ const route = useRoute();
 const currentZip = route.query.current;
 const destZip = route.query.dest;
 
-// break down the validation steps into multiple schemas
 const validationSchema = [
   yup.object({
-    currentAddress: yup.string().required().label("Current address"),
+    currentAddress: yup.string().required().label("Adress"),
     currentCity: yup.string().required().label("City"),
     currentState: yup.string().required().label("State"),
-    currentZip: yup.string().length(5).required().label("Current zip"),
-    destZip: yup.string().length(5).required().label("Destination zip"),
+    currentZip: yup.string().length(5).required().label("Zip"),
+  }),
+  yup.object({
+    destAddress: yup.string().required().label("Address"),
+    destCity: yup.string().required().label("City"),
+    destState: yup.string().required().label("State"),
+    destZip: yup.string().length(5).required().label("Zip"),
   }),
   yup.object({
     houseType: yup
@@ -56,22 +60,22 @@ const validationSchema = [
 
 const formStatus = ref("incomplete");
 
-/**
- * Only Called when the last step is submitted
- */
 function onSubmit(formData) {
   formStatus.value = "loading";
   useTimeoutFn(() => {
+    const form = new FormData();
+
+    Object.keys(formData).forEach((key) => {
+      form.append(key, formData[key]);
+    });
+
     axios
-      .post(
-        "https://getform.io/f/87248c80-987c-4791-9770-2e358c9533d9",
-        JSON.stringify(formData, null, 2),
-        {
-          headers: {
-            Accept: "application/json",
-          },
-        }
-      )
+      .post("https://getform.io/f/bxowdqla", form, {
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "multipart/form-data",
+        },
+      })
       .then((response) => {
         if (response.status === 200) {
           formStatus.value = "complete";
@@ -98,6 +102,7 @@ function onSubmit(formData) {
   </div>
   <div v-show="formStatus === 'incomplete'" class="form-wrapper">
     <FormWizard :validation-schema="validationSchema" @submit="onSubmit">
+      <!-- Current Address -->
       <FormStep
         v-motion
         :initial="{ opacity: 0 }"
@@ -110,8 +115,9 @@ function onSubmit(formData) {
           },
         }"
       >
-        <label>Current address*</label>
-        <Field name="currentAddress" type="text" autocomplete="street-name" />
+        <h1>Current Address</h1>
+        <label>Address*</label>
+        <Field name="currentAddress" type="text" autocomplete="address-line1" />
         <ErrorMessage
           v-motion
           :initial="{
@@ -197,9 +203,91 @@ function onSubmit(formData) {
           }"
           name="currentZip"
         />
+      </FormStep>
 
-        <label>Destination zip code*</label>
-        <Field name="destZip" :value="destZip" type="number" />
+      <!-- Destination Address -->
+      <FormStep
+        v-motion
+        :initial="{ opacity: 0 }"
+        :enter="{
+          opacity: 1,
+          transition: {
+            duration: 300,
+            type: 'keyframes',
+            ease: 'easeIn',
+          },
+        }"
+      >
+        <h1>Destination Address</h1>
+        <label>Address*</label>
+        <Field name="destAddress" type="text" />
+        <ErrorMessage
+          v-motion
+          :initial="{
+            opacity: 0,
+            y: -10,
+          }"
+          :enter="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 25,
+              mass: 0.5,
+            },
+          }"
+          name="destAddress"
+        />
+
+        <label>City*</label>
+        <Field name="destCity" type="text" />
+        <ErrorMessage
+          v-motion
+          :initial="{
+            opacity: 0,
+            y: -10,
+          }"
+          :enter="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 25,
+              mass: 0.5,
+            },
+          }"
+          name="destCity"
+        />
+
+        <label>State*</label>
+        <Field name="destState" type="text" />
+        <ErrorMessage
+          v-motion
+          :initial="{
+            opacity: 0,
+            y: -10,
+          }"
+          :enter="{
+            opacity: 1,
+            y: 0,
+            transition: {
+              type: 'spring',
+              stiffness: 200,
+              damping: 25,
+              mass: 0.5,
+            },
+          }"
+          name="destState"
+        />
+        <label>Zip code*</label>
+        <Field
+          name="destZip"
+          :value="destZip"
+          type="number"
+          autocomplete="postal-code"
+        />
         <ErrorMessage
           v-motion
           :initial="{
@@ -220,6 +308,7 @@ function onSubmit(formData) {
         />
       </FormStep>
 
+      <!-- Current Location Description -->
       <FormStep
         v-motion
         :initial="{ opacity: 0 }"
@@ -309,6 +398,7 @@ function onSubmit(formData) {
         />
       </FormStep>
 
+      <!-- Personal Information -->
       <FormStep
         v-motion
         :initial="{ opacity: 0 }"
@@ -406,6 +496,7 @@ function onSubmit(formData) {
         />
       </FormStep>
 
+      <!-- Preferred Move Date -->
       <FormStep
         v-motion
         :initial="{ opacity: 0 }"
@@ -497,7 +588,7 @@ function onSubmit(formData) {
       box-shadow: 0 0 0 1px var(--gray-300);
       border-radius: 6px;
       padding: var(--space-3xs);
-      margin: var(--space-3xs) 0;
+      margin: var(--space-2xs) 0;
 
       &:focus {
         outline: none;
@@ -512,9 +603,12 @@ function onSubmit(formData) {
     select {
       width: 200px;
       padding: var(--space-3xs);
+      border: 1px solid var(--gray-300);
+      border-radius: 8px;
     }
 
     label {
+      font-size: var(--step--1);
       font-weight: 600;
       display: block;
     }
@@ -525,10 +619,16 @@ function onSubmit(formData) {
       display: block;
       width: 250px;
     }
+
+    h1 {
+      font-size: var(--step-2);
+      color: var(--gray-400);
+      padding-bottom: 5px;
+      font-weight: 300;
+    }
   }
 }
 
-/* Loader */
 .loader-wrapper {
   height: 300px;
   display: flex;
